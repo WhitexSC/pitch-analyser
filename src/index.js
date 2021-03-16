@@ -26,6 +26,7 @@ let options = {
 	callback: null,
 	returnNote: true,
 	returnCents: false,
+	currentTime: false,
 	decimals: 2,
 };
 
@@ -87,7 +88,7 @@ class PitchAnalyser {
 		const frequency = calculateFrequency(frequencies);
 
 		if (frequency) {
-			const { returnCents, returnNote, decimals, callback } = options;
+			const { returnCents, returnNote, decimals, callback, displayCurrentTime } = options;
 
 			const returnValue = {
 				frequency: toDecimals(frequency, decimals),

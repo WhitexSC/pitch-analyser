@@ -120,7 +120,9 @@ class PitchAnalyser {
 				}
 			}
 			// Execute the callback. (Intended for returning the output)
-			callback(returnValue);
+			if (this.audioContext !== null) {
+				callback(returnValue);
+			}
 		}
 
 		// Tells the browser we wish to perform an animation. Call callback before re-paint

@@ -106,6 +106,10 @@ class PitchAnalyser {
 				this.lastFrequency = frequency;
 			}
 
+			if (displayCurrentTime) {
+				const currentTime = audioCtx.currentTime;
+				returnValue.currentTime = currentTime;
+			}
 			// Execute the callback. (Intended for returning the output)
 			callback(returnValue);
 		}

@@ -28,9 +28,6 @@
 	],
 	"author": "Kang Yun Wang",
 	"license": "MIT",
-	"files": [
-		"dist"
-	],
 	"bugs": {
 		"url": "https://github.com/kyunwang/pitch-analyser/issues"
 	},

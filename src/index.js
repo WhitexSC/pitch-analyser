@@ -114,8 +114,10 @@ class PitchAnalyser {
 			}
 
 			if (currentTime) {
-				const time = this.audioContext.currentTime;
-				returnValue.currentTime = time;
+				if (this.audioContext) {
+					const time = this.audioContext.currentTime;
+					returnValue.currentTime = time;
+				}
 			}
 			// Execute the callback. (Intended for returning the output)
 			callback(returnValue);

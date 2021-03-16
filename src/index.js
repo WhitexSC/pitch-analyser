@@ -88,7 +88,13 @@ class PitchAnalyser {
 		const frequency = calculateFrequency(frequencies);
 
 		if (frequency) {
-			const { returnCents, returnNote, decimals, callback, displayCurrentTime } = options;
+			const {
+				returnCents,
+				returnNote,
+				decimals,
+				callback,
+				currentTime,
+			} = options;
 
 			const returnValue = {
 				frequency: toDecimals(frequency, decimals),
@@ -107,9 +113,9 @@ class PitchAnalyser {
 				this.lastFrequency = frequency;
 			}
 
-			if (displayCurrentTime) {
-				const currentTime = audioCtx.currentTime;
-				returnValue.currentTime = currentTime;
+			if (currentTime) {
+				const time = this.audioContext.currentTime;
+				returnValue.currentTime = time;
 			}
 			// Execute the callback. (Intended for returning the output)
 			callback(returnValue);

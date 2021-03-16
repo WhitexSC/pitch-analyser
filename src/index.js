@@ -114,7 +114,7 @@ class PitchAnalyser {
 			}
 
 			if (currentTime) {
-				if (this.audioContext) {
+				if (this.audioContext !== null) {
 					const time = this.audioContext.currentTime;
 					returnValue.currentTime = time;
 				}
